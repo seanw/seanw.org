@@ -17,6 +17,7 @@ var config = {
       dest: "./build"
     },
   },
+  pagesUrl : 'http://seanw.github.com/seanw.org',
   ghPages : {remoteUrl: 'https://github.com/seanw/seanw.org/'}
 }
 
