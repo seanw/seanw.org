@@ -5,12 +5,13 @@ var minifyCSS   = require('gulp-minify-css');
 var ghPages     = require('gulp-gh-pages');
 var rimraf      = require('gulp-rimraf');
 var runSequence = require('run-sequence');
-
-minifyHTML = require("gulp-minify-html");
+var minifyHTML = require("gulp-minify-html");
+var imagemin = require('gulp-imagemin');
 
 var config = {
   paths: {
     build: "./_site/**",
+    img:  ["./img/**/*"],
     html: {
       src:  ["./_site/**/*.html"],
       css:  ["./_site/**/*.css"],
@@ -20,6 +21,14 @@ var config = {
   pagesUrl : 'http://seanw.github.com/seanw.org',
   ghPages : {remoteUrl: 'https://github.com/seanw/seanw.org/'}
 }
+
+gulp.task('imagemin', function() {
+  return gulp.src(config.paths.img, {base: './'})
+  .pipe(imagemin({
+    progressive: true
+  }))
+  .pipe(gulp.dest('./'));
+});
 
 gulp.task('clean', function (cb) {
   // rimraf(config.paths.build, cb);
