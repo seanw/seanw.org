@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Freelance web and mobile developer, Edinburgh</title>
-    <description>Experienced developer offering web, mobile (Android, iOS), SEO, cloud (Heroku, AWS, Google Apps) and WordPress related services in Edinburgh and remotely.</description>
-    <link>http://seanw.org/</link>
-    <atom:link href="http://seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 14 Jan 2015 21:40:28 +0000</pubDate>
-    <lastBuildDate>Wed, 14 Jan 2015 21:40:28 +0000</lastBuildDate>
+    <title>Sean Wilson, Web and mobile developer, Edinburgh</title>
+    <description>Experienced developer offering web, mobile (Android, iOS), SEO, cloud (Heroku, AWS, Google Apps), JavaScript and WordPress services.</description>
+    <link>http://www.seanw.org/</link>
+    <atom:link href="http://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 15 Jan 2015 02:31:56 +0000</pubDate>
+    <lastBuildDate>Thu, 15 Jan 2015 02:31:56 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
   </channel>
