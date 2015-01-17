@@ -1,5 +1,6 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
+var concat      = require('gulp-concat');
 var reload      = browserSync.reload;
 var minifyCSS   = require('gulp-minify-css');
 var ghPages     = require('gulp-gh-pages');
@@ -12,21 +13,16 @@ var config = {
   paths: {
     build: "./_site/**",
     img:  ["./img/**/*"],
+    css:  ["./_site/css/*.css"],
     html: {
       src:  ["./_site/**/*.html"],
-      css:  ["./_site/**/*.css"],
       dest: "./build"
     },
   },
 };
 
 var secretConfig = require('./secret-config.js')(config);
-
 var cloudflare = require('cloudflare').createClient(config.cloudflareAccount);
-
-cloudflare.clearCache(config.siteDomain, 1);
-
-
 
 gulp.task('imagemin', function() {
   return gulp.src(config.paths.img, {base: './'})
@@ -40,7 +36,7 @@ gulp.task('clean', function (cb) {
   // rimraf(config.paths.build, cb);
   return gulp.src(config.paths.build, { read: false }) // much faster
   .pipe(rimraf());
-})
+});
 
 gulp.task('upload', function () {
   return gulp.src(config.paths.build)
@@ -48,7 +44,12 @@ gulp.task('upload', function () {
 });
 
 gulp.task('deploy', function () {
-  return runSequence(['html', 'css'], 'upload');
+  return runSequence(['html', 'css'], 'upload', 'purge-online-cache');
+});
+
+// Purges website cache so updates are shown
+gulp.task('purge-online-cache', function () {
+  cloudflare.clearCache(config.siteDomain, 1, function() {});
 });
 
 gulp.task("html", function(){
@@ -63,10 +64,10 @@ gulp.task("html", function(){
 });
 
 gulp.task("css", function(){
-  // Overwrite original files
-  return gulp.src(config.paths.html.css, {base: './'})
-  .pipe(minifyCSS())
-  .pipe(gulp.dest('./'));
+  return gulp.src("css/*.css", {base: './'})
+    .pipe(concat('styles.css'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('css/'));
 });
 
 // Start the server
