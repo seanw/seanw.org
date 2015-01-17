@@ -18,9 +18,15 @@ var config = {
       dest: "./build"
     },
   },
-  pagesUrl : 'http://seanw.github.com/seanw.org',
-  ghPages : {remoteUrl: 'https://github.com/seanw/seanw.org/'}
-}
+};
+
+var secretConfig = require('./secret-config.js')(config);
+
+var cloudflare = require('cloudflare').createClient(config.cloudflareAccount);
+
+cloudflare.clearCache(config.siteDomain, 1);
+
+
 
 gulp.task('imagemin', function() {
   return gulp.src(config.paths.img, {base: './'})
