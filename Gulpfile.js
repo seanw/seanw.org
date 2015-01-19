@@ -6,8 +6,9 @@ var minifyCSS   = require('gulp-minify-css');
 var ghPages     = require('gulp-gh-pages');
 var rimraf      = require('gulp-rimraf');
 var runSequence = require('run-sequence');
-var minifyHTML = require("gulp-minify-html");
-var imagemin = require('gulp-imagemin');
+var minifyHTML  = require("gulp-minify-html");
+var imagemin    = require('gulp-imagemin');
+var http        = require('http');
 
 var config = {
   paths: {
@@ -46,6 +47,28 @@ gulp.task('upload', function () {
 gulp.task('deploy', function () {
   return runSequence(['html', 'css'], 'upload', 'purge-online-cache');
 });
+
+var options = {
+  host: 'www.google.com',
+  port: 80,
+  path: '/upload',
+  method: 'POST'
+};
+
+gulp.task('request-google-reindex', function () {
+  var options = {
+    host: 'http://www.google.com',
+    port: 80,
+    path: '/webmasters/sitemaps/ping?sitemap=//' + config.siteDomain
+  };
+
+  http.get(options, function(res) {
+    console.log("Got response: " + res.statusCode);
+  }).on('error', function(e) {
+    console.log("Got error: " + e.message);
+  });
+});
+
 
 // Purges website cache so updates are shown
 gulp.task('purge-online-cache', function () {
