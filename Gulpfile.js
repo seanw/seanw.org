@@ -1,3 +1,4 @@
+var uglify = require('gulp-uglifyjs');
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
@@ -14,6 +15,7 @@ var config = {
   paths: {
     build: "./_site/**",
     img: ["./img/**/*"],
+    js: ["./js/**/*.js"],
     css: ["./_site/css/*.css"],
     html: {
       src: ["./_site/**/*.html"],
@@ -113,6 +115,13 @@ gulp.task("css", function() {
     .pipe(gulp.dest('css/'));
 });
 
+gulp.task('js', function() {
+  gulp.src('js/*.js')
+  .pipe(uglify())
+  .pipe(concat('scripts.js'))
+  .pipe(gulp.dest('js/'))
+});
+
 // Start the server
 gulp.task('browser-sync', function() {
   browserSync({
@@ -152,5 +161,5 @@ function jekyllBuild(done) {
 gulp.task('default', ['browser-sync'], function() {
   gulp.watch(config.paths.html.src, ['html']);
   //gulp.watch("./build/**/*", ['bs-reload']);
-  gulp.watch(["./**/*.html", "!./build/**/*", "!./_site/**/*"], ['jekyll-build', 'bs-reload']);
+  gulp.watch(["./js/*.js", "./**/*.html", "!./build/**/*", "!./_site/**/*"], ['jekyll-build', 'bs-reload']);
 });
