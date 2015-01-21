@@ -61,29 +61,12 @@ var options = {
   method: 'POST'
 };
 
-function submitSitemap(submitHost, submitPath, successCallback, errorCallback) {
-  var options = {
-    host: submitHost,
-    port: 80,
-    path: submitPath + encodeURIComponent(config.siteDomain),
-    agent: false
-  };
-
-  http
-    .get(options, function(req) {
-      successCallback();
-      req.on('data', function(chunk) {
-        console.error('BODY: ' + chunk);
-      });
-    })
-    .on('error', errorCallback)
-    // .on('end', cb);
-}
-
 gulp.task('submit-sitemap', function(cb) {
   require('submit-sitemap').submitSitemap(config.sitemapUrl, function(err) {
     if (err)
       console.warn(err);
+
+    cb();
   });
 });
 
@@ -168,7 +151,7 @@ gulp.task('default', ['browser-sync'], function() {
   //gulp.watch(config.paths.css, runSequence('jekyll', 'css', 'bs-reload'));
 
   //gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css"], runSequence('jekyll', 'css', 'bs-reload'));
-  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css",
+  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css", "./**/*.markdown",
   "!./build/**/*", "!./_site/**/*"
 
   ], ['build']);

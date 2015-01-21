@@ -5,9 +5,58 @@
     <description>Experienced developer offering web, mobile (Android, iOS, PhoneGap), SEO, cloud (Heroku, AWS, Google Apps), JavaScript and WordPress services.</description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 21 Jan 2015 06:25:40 +0000</pubDate>
-    <lastBuildDate>Wed, 21 Jan 2015 06:25:40 +0000</lastBuildDate>
+    <pubDate>Wed, 21 Jan 2015 17:13:06 +0000</pubDate>
+    <lastBuildDate>Wed, 21 Jan 2015 17:13:06 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>submit-sitemap: Node.js module to submit sitemaps to search engines</title>
+        <description>&lt;p&gt;I’ve just uploaded a small &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; module for submitting/pinging sitemaps to search engines called &lt;a href=&quot;https://github.com/seanw/submit-sitemap&quot;&gt;submit-sitemap&lt;/a&gt;. This is meant to be used after you’ve made updates to your site to encourage crawlers to reindex your pages.&lt;/p&gt;
+
+&lt;p&gt;The module currently submits your sitemap to &lt;a href=&quot;http://www.google.com&quot;&gt;Google&lt;/a&gt; and &lt;a href=&quot;http://www.bing.com&quot;&gt;Bing&lt;/a&gt;. This saves you from having to use &lt;a href=&quot;https://support.google.com/sites/answer/100283?hl=en&quot;&gt;Google’s webmaster tools&lt;/a&gt; and &lt;a href=&quot;http://www.bing.com/webmaster/help/how-to-submit-sitemaps-82a15bd4&quot;&gt;Bing’s webmaster tools&lt;/a&gt; to submit your sitemap manually.&lt;/p&gt;
+
+&lt;p&gt;For example, I’ve used this in the last stage of &lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; build scripts that generate and deploy static sites in the following way:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Generate a static site using &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Generate a sitemap file for the static site using &lt;a href=&quot;https://www.npmjs.com/package/gulp-sitemap&quot;&gt;gulp-sitemap&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Upload the site and sitemap to &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github pages&lt;/a&gt; using &lt;a href=&quot;https://github.com/rowoot/gulp-gh-pages&quot;&gt;gulp-gh-pages&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Finally, use submit-sitemap to submit the sitemap to search engines for indexing.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To install the module:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install submit-sitemap --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To submit your sitemap:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;submit-sitemap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://www.seanw.org/sitemap.xml&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The optional callback parameter can be used to respond to success and failure:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;On success, &lt;code&gt;err&lt;/code&gt; will be undefined.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On error, &lt;code&gt;err&lt;/code&gt; will be set to an error message. This happens if the sitemap URL could not be reached or any of the sitemap submission attempts failed.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find out more about the submit-sitemap module on &lt;a href=&quot;https://www.npmjs.com/package/submit-sitemap&quot;&gt;npmjs.com&lt;/a&gt; and &lt;a href=&quot;https://github.com/seanw/submit-sitemap&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/submit-sitemap-with-node-js</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/submit-sitemap-with-node-js</guid>
+        
+        
+      </item>
     
   </channel>
 </rss>
