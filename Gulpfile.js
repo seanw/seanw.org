@@ -16,7 +16,7 @@ var config = {
     build: "./_site/**",
     img: ["./img/**/*"],
     js: ["./js/**/*.js"],
-    css: ["./_site/css/*.css"],
+    css: ["./css/**/*.css"],
     html: {
       src: ["./_site/**/*.html"],
       dest: "./build"
@@ -110,9 +110,9 @@ gulp.task("css", function() {
   return gulp.src("css/*.css", {
       base: './'
     })
-    .pipe(concat('styles.css'))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('css/'));
+    .pipe(concat('styles.css'))
+    .pipe(gulp.dest('_site/css/'));
 });
 
 gulp.task('js', function() {
@@ -120,15 +120,6 @@ gulp.task('js', function() {
   .pipe(uglify())
   .pipe(concat('scripts.js'))
   .pipe(gulp.dest('js/'))
-});
-
-// Start the server
-gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-      baseDir: "./_site/"
-    }
-  });
 });
 
 // Compile SASS & auto-inject into browsers
@@ -148,18 +139,40 @@ gulp.task('bs-reload', function() {
   browserSync.reload();
 });
 
-gulp.task('jekyll-build', function() {
-  jekyllBuild();
-});
-
 function jekyllBuild(done) {
-  return require('child_process').exec('jekyll', ['build'], {
+  return require('child_process', done).exec('jekyll build', {
     stdio: 'inherit'
   }, done);
 }
 
+gulp.task('jekyll', function(done) {
+  jekyllBuild(done);
+});
+
+// Start the server
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: "./_site/"
+    }
+  });
+});
+
+gulp.task('build', function(done) {
+  runSequence('jekyll', 'css', 'bs-reload', done);
+});
+
 gulp.task('default', ['browser-sync'], function() {
-  gulp.watch(config.paths.html.src, ['html']);
+//gulp.task('default', function() {
+  //gulp.watch(config.paths.html.src, ['html']);
+  //gulp.watch(config.paths.css, runSequence('jekyll', 'css', 'bs-reload'));
+
+  //gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css"], runSequence('jekyll', 'css', 'bs-reload'));
+  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css",
+  "!./build/**/*", "!./_site/**/*"
+
+  ], ['build']);
+
   //gulp.watch("./build/**/*", ['bs-reload']);
-  gulp.watch(["./js/*.js", "./**/*.html", "!./build/**/*", "!./_site/**/*"], ['jekyll-build', 'bs-reload']);
+  //gulp.watch(["./js/*.js", "./**/*.html", "!./build/**/*", "!./_site/**/*"], ['jekyll-build', 'bs-reload']);
 });
