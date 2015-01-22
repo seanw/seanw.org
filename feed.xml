@@ -5,12 +5,12 @@
     <description>Experienced developer offering web, mobile (Android, iOS, PhoneGap), SEO, cloud (Heroku, AWS, Google Apps), JavaScript and WordPress services.</description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 22 Jan 2015 11:09:06 +0000</pubDate>
-    <lastBuildDate>Thu, 22 Jan 2015 11:09:06 +0000</lastBuildDate>
+    <pubDate>Thu, 22 Jan 2015 11:10:35 +0000</pubDate>
+    <lastBuildDate>Thu, 22 Jan 2015 11:10:35 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Hiding visits to your own site from Google Analytics</title>
+        <title>Hiding visits to your own site in Google Analytics</title>
         <description>&lt;p&gt;When working on a site, it’s common to browse it yourself from multiple browsers, multiple devices and multiple locations for testing purposes. For analytics about your user behaviour to be useful, we need a way to exclude this internal traffic from Google Analytics reports. In this post I explain a method I found useful for hiding visits to your own site when you want to be able to test your site from any browser or any location.&lt;/p&gt;
 
 &lt;p&gt;Google recommends &lt;a href=&quot;https://support.google.com/analytics/answer/1034840?hl=en-GB&quot;&gt;setting up a filter on an IP range&lt;/a&gt; within Google Analytics to filter out internal traffic. This would be a foolproof method if your work IP address is always within a set range but isn’t going to help if you sometimes browse from a different location. However, this method could be used in combination with the following one I prefer.&lt;/p&gt;
