@@ -110,6 +110,15 @@ h2 {
   color: #019cb4;
 }
 
+h3 {
+  font-size: 17px;
+  font-weight: 300;
+  /*color: white;*/
+  text-align: left;
+  /*text-transform: uppercase;*/
+  color: #019cb4;
+}
+
 .intro {
   font-size: 19px;
   font-weight: 300;
