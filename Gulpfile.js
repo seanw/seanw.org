@@ -123,7 +123,7 @@ gulp.task('bs-reload', function() {
 });
 
 function jekyllBuild(done) {
-  return require('child_process', done).exec('jekyll build', {
+  return require('child_process', done).exec('jekyll build --trace', {
     stdio: 'inherit'
   }, done);
 }
@@ -145,16 +145,17 @@ gulp.task('build', function(done) {
   runSequence('jekyll', 'css', 'bs-reload', done);
 });
 
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('default', ['build', 'browser-sync'], function() {
 //gulp.task('default', function() {
   //gulp.watch(config.paths.html.src, ['html']);
   //gulp.watch(config.paths.css, runSequence('jekyll', 'css', 'bs-reload'));
 
-  //gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css"], runSequence('jekyll', 'css', 'bs-reload'));
-  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css", "./**/*.markdown",
+  //gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css"],   runSequence('jekyll', 'css', 'bs-reload'));
+  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css", "./**/*.markdown", "./**/*.yml",
   "!./build/**/*", "!./_site/**/*"
 
   ], ['build']);
+
 
   //gulp.watch("./build/**/*", ['bs-reload']);
   //gulp.watch(["./js/*.js", "./**/*.html", "!./build/**/*", "!./_site/**/*"], ['jekyll-build', 'bs-reload']);
