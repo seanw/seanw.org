@@ -1,4 +1,7 @@
 /* Custom CSS */
+@section1-color: white;
+@section2-color: #f3f3f3;
+@highlight-color: #2197ff;
 
 body {
   font-family: 'Open Sans', 'Times New Roman', serif;
@@ -18,13 +21,13 @@ body {
 a,
 a:hover,
 a:focus {
-  color: #019cb4;
+  color: @highlight-color;
   text-decoration: none !important;
   font-weight: 300;
 }
 
 body {
-  webkit-tap-highlight-color: #0085a1;
+  webkit-tap-highlight-color: @highlight-color;
 }
 
 hr{
@@ -80,8 +83,6 @@ hr{
   }
 }
 
-
-
 .icon-bar {
   background-color:white !important;
 }
@@ -89,7 +90,7 @@ hr{
 body,
 .form-control {
   /*font-size: 15px;*/
-  color: #777 !important;
+  color: black !important;
 }
 
 h1 {
@@ -98,25 +99,25 @@ h1 {
   text-align: center;
   /*text-transform: uppercase;*/
   font-weight: 400;
-  color: #019cb4;
+  color: @highlight-color;
 }
 
 h2 {
   font-size: 19px;
-  font-weight: 300;
+  font-weight: 400;
   /*color: white;*/
   text-align: center;
   /*text-transform: uppercase;*/
-  color: #019cb4;
+  color: @highlight-color;
 }
 
 h3 {
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   /*color: white;*/
   text-align: left;
   /*text-transform: uppercase;*/
-  color: #019cb4;
+  color: @highlight-color;
 }
 
 .intro {
@@ -156,7 +157,7 @@ header {
 
 .btn-primary{
   color: white;
-  background-color: #019cb4;
+  background-color: @highlight-color;
   border-color: transparent;
 }
 
@@ -175,7 +176,7 @@ textarea {
 footer {
   background-color: #F0F0F0;
   padding: 20px 0 20px;
-  color: #5888be;
+  color: @highlight-color;
   background-color: #222;
 }
 
@@ -185,7 +186,7 @@ footer i {
 }
 
 .fa-stack {
-  color: #5888be;
+  color: @highlight-color;
 }
 
 .vcenter-col {
@@ -208,12 +209,12 @@ footer i {
 }
 
 .section:nth-child(even) {
-  background-color: white !important;
+  background-color: @section1-color !important;
 
 }
 
 .section:nth-child(odd) {
-  background-color: #f3f3f3 !important;
+  background-color: @section2-color !important;
 }
 
 .form-group {

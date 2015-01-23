@@ -25,6 +25,7 @@ var minifyHTML = require("gulp-minify-html");
 var imagemin = require('gulp-imagemin');
 var http = require('http');
 var cloudflare = require('cloudflare').createClient(config.cloudflareAccount);
+var less = require('gulp-less');
 
 gulp.task('imagemin', function() {
   return gulp.src(config.paths.img, {
@@ -80,6 +81,9 @@ gulp.task("css", function() {
   return gulp.src("css/*.css", {
       base: './'
     })
+    .pipe(less().on('error', function (err) {
+      console.log(err);
+    }))
     .pipe(minifyCSS())
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('_site/css/'));
@@ -114,6 +118,12 @@ function jekyllBuild(done) {
     stdio: 'inherit'
   }, done);
 }
+
+gulp.task('commit-and-deploy', function(done) {
+  return require('child_process', done).exec('git add . && git commit && git push && gulp deploy', {
+    stdio: 'inherit'
+  }, done);
+});
 
 gulp.task('jekyll', function(done) {
   jekyllBuild(done);
