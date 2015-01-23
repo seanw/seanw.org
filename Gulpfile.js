@@ -139,8 +139,7 @@ gulp.task('default', ['build', 'browser-sync'], function() {
   //gulp.watch(config.paths.css, runSequence('jekyll', 'css', 'bs-reload'));
 
   //gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css"],   runSequence('jekyll', 'css', 'bs-reload'));
-  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css", "./**/*.markdown", "./**/*.yml",
-  "!./build/**/*", "!./_site/**/*"], ['build']);
+  gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css", "./**/*.markdown", "./**/*.yml", "img/**/*", "!./build/**/*", "!./_site/**/*"], ['build']);
 
 
   //gulp.watch("./build/**/*", ['bs-reload']);
