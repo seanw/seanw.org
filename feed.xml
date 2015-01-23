@@ -5,8 +5,8 @@
     <description>Experienced developer offering web, mobile (Android, iOS, PhoneGap), SEO, cloud (Heroku, AWS, Google Apps), JavaScript and WordPress services.</description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 23 Jan 2015 13:02:09 +0000</pubDate>
-    <lastBuildDate>Fri, 23 Jan 2015 13:02:09 +0000</lastBuildDate>
+    <pubDate>Fri, 23 Jan 2015 13:22:37 +0000</pubDate>
+    <lastBuildDate>Fri, 23 Jan 2015 13:22:37 +0000</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;As well as working from any location, this also has the advantage of letting you confirm analytics activity is being successfully sent unlike approaches that disable the Google Analytics script for internal users altogether. I’ll now explain how to implement the above approach.&lt;/p&gt;
 
-&lt;h3 id=&quot;creating-a-custom-dimension-for-internal-users&quot;&gt;Creating a custom dimension for internal users&lt;/h3&gt;
+&lt;h2 id=&quot;creating-a-custom-dimension-for-internal-users&quot;&gt;Creating a custom dimension for internal users&lt;/h2&gt;
 
 &lt;p&gt;First you have to create a custom Google Analytics dimension:&lt;/p&gt;
 
@@ -50,7 +50,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;a-hidden-page-to-label-you-as-an-internal-user&quot;&gt;A hidden page to label you as an internal user&lt;/h3&gt;
+&lt;h2 id=&quot;a-hidden-page-to-label-you-as-an-internal-user&quot;&gt;A hidden page to label you as an internal user&lt;/h2&gt;
 
 &lt;p&gt;You then need to create a hidden page on your site that sets this dimension for the current user by sending a message to Google Analytics. You can do this with HTML such as the following:&lt;/p&gt;
 
@@ -103,7 +103,7 @@
 
 &lt;p&gt;We also set the &lt;code&gt;robots&lt;/code&gt; metatag so web crawlers won’t list this page in search results.&lt;/p&gt;
 
-&lt;h3 id=&quot;excluding-your-custom-dimension-from-reports&quot;&gt;Excluding your custom dimension from reports&lt;/h3&gt;
+&lt;h2 id=&quot;excluding-your-custom-dimension-from-reports&quot;&gt;Excluding your custom dimension from reports&lt;/h2&gt;
 
 &lt;p&gt;Next, you need to exclude any users that have the custom dimension attached to them from reports:&lt;/p&gt;
 
