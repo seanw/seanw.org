@@ -86,10 +86,10 @@ gulp.task("css", function() {
 });
 
 gulp.task('js', function() {
-  gulp.src('js/*.js')
+  return gulp.src('js/*.js')
   .pipe(uglify())
   .pipe(concat('scripts.js'))
-  .pipe(gulp.dest('js/'))
+  .pipe(gulp.dest('_site/js/'));
 });
 
 // Compile SASS & auto-inject into browsers
@@ -124,12 +124,13 @@ gulp.task('browser-sync', function() {
   browserSync({
     server: {
       baseDir: "./_site/"
-    }
+    },
+    open: false
   });
 });
 
 gulp.task('build', function(done) {
-  runSequence('jekyll', 'css', 'bs-reload', done);
+  runSequence('jekyll', ['css', 'js'], 'bs-reload', done);
 });
 
 gulp.task('default', ['build', 'browser-sync'], function() {
@@ -139,9 +140,7 @@ gulp.task('default', ['build', 'browser-sync'], function() {
 
   //gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css"],   runSequence('jekyll', 'css', 'bs-reload'));
   gulp.watch(["./js/*.js", "./**/*.html", "./css/*.css", "./**/*.markdown", "./**/*.yml",
-  "!./build/**/*", "!./_site/**/*"
-
-  ], ['build']);
+  "!./build/**/*", "!./_site/**/*"], ['build']);
 
 
   //gulp.watch("./build/**/*", ['bs-reload']);

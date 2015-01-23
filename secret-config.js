@@ -10,3 +10,4 @@ module.exports = function(config) {
   config.pagesUrl = 'http://seanw.github.com/seanw.org';
   config.ghPages = {remoteUrl: 'https://github.com/seanw/seanw.org/'};
 };
+

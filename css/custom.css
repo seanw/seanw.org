@@ -198,7 +198,7 @@ footer i {
 @media (min-width: 300px) {
   .section-content
   {
-    max-width: 650px;
+    max-width: 800px;
     margin: 0 auto;
   }
 }
