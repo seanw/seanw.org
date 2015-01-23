@@ -5,8 +5,8 @@
     <description>Experienced developer offering web, mobile (Android, iOS, PhoneGap), SEO, cloud (Heroku, AWS, Google Apps), JavaScript and WordPress services.</description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 23 Jan 2015 12:51:48 +0000</pubDate>
-    <lastBuildDate>Fri, 23 Jan 2015 12:51:48 +0000</lastBuildDate>
+    <pubDate>Fri, 23 Jan 2015 13:02:09 +0000</pubDate>
+    <lastBuildDate>Fri, 23 Jan 2015 13:02:09 +0000</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -43,20 +43,10 @@
     &lt;p&gt;Select “Custom Definitions”, “Custom Dimensions” then “New Custom Dimension”.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Create a new dimension with the name “InternalUser” with “Scope” set to “User”. This is the label we’ll use to track internal users.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;excluding-your-custom-dimension-from-reports&quot;&gt;Excluding your custom dimension from reports&lt;/h3&gt;
-
-&lt;p&gt;Next, you need to exclude any users that have the custom dimension attached to them from reports:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;From the Google Analytics admin panel, select “Filters” then “New Filter”.&lt;/p&gt;
+    &lt;p&gt;Create a new dimension with the name “Internal user” with “Scope” set to “User”. This is the label we’ll use to track internal users.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Set the filter type to “Custom”, set “Filter Field” to “Internal User”, set “Filter Pattern” to “1” then save the filter.&lt;/p&gt;
+    &lt;p&gt;Take note of the value of the index field that appears next to your new dimension as you’ll need it in the next step.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -84,12 +74,12 @@
       1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,&#39;script&#39;,
       &#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
 
-      ga(&#39;create&#39;, /*YOUR_GOOGLE_ANALYTICS_ID_HERE*/, &#39;auto&#39;);
+      ga(&#39;create&#39;, /*YOUR GOOGLE ANALYTICS ID HERE*/, &#39;auto&#39;);
       ga(&#39;require&#39;, &#39;displayfeatures&#39;);
-      ga(&#39;send&#39;, &#39;pageview&#39;);
       &amp;lt;!------------------------------&amp;gt;
 
-      ga(&#39;set&#39;, &#39;InternalUser&#39;, &#39;1&#39;);
+      ga(&#39;set&#39;, &#39;dimension/*YOUR DIMENSION INDEX HERE*/&#39;, &#39;true&#39;);
+      ga(&#39;send&#39;, &#39;pageview&#39;);
       setTimeout(function() { window.location.href = &quot;/&quot;; }, 5000);
     &amp;lt;/script&amp;gt;
   &amp;lt;/body&amp;gt;
@@ -101,10 +91,10 @@
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Uses the standard script snippet for loading Google Analytics (remember to replace the placeholder text with the ID for your site!).&lt;/p&gt;
+    &lt;p&gt;Uses the standard script snippet for loading Google Analytics. You’ll need to update the snippet with your Google Analytics ID.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Sets the “InternalUser” dimension you just created for the current user.&lt;/p&gt;
+    &lt;p&gt;Sets the “Internal user” dimension for the current user. You’ll need to update the snippet with your dimension index.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Redirects the user back to the homepage after a delay.&lt;/p&gt;
@@ -112,6 +102,19 @@
 &lt;/ol&gt;
 
 &lt;p&gt;We also set the &lt;code&gt;robots&lt;/code&gt; metatag so web crawlers won’t list this page in search results.&lt;/p&gt;
+
+&lt;h3 id=&quot;excluding-your-custom-dimension-from-reports&quot;&gt;Excluding your custom dimension from reports&lt;/h3&gt;
+
+&lt;p&gt;Next, you need to exclude any users that have the custom dimension attached to them from reports:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;From the Google Analytics admin panel, select “Filters” then “New Filter”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Set the filter type to “Custom”, set “Filter Field” to “Internal user”, set “Filter Pattern” to “true” then save the filter.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
