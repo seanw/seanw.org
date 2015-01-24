@@ -25,11 +25,9 @@ var options = {
   debug: true
 };
 
-console.log('custom');
-
 function log(message) {
   if (options.debug) {
-    console.log(message);
+    console && console.log && console.log(message);
   }
 }
 
@@ -51,7 +49,7 @@ function trackLinkClick(element) {
   var handler = function(event) {
     event.preventDefault();
     var element = $(this);
-    console.log(element);
+
     analyticsEvent('Link', 'Click', element.attr('href'), undefined, function() {
       // Remove our handler so we can trigger the previous event handler
       element.unbind('click', handler);
@@ -78,7 +76,7 @@ var trackElements = function(selector) {
   if (typeof ga === 'undefined')
     log("Google Analytics not loaded!");
 
-  log('trackElements');
+  log('Init tracking');
 
   var elements = $(selector).each(function(i, element) {
     element = $(element);
@@ -92,4 +90,4 @@ var trackElements = function(selector) {
   });
 };
 
-// trackElements('form,a');
+trackElements('form,a');
