@@ -43,6 +43,8 @@ function analyticsEvent(category, action, label, value, callback) {
 
   log('Sending event: ' + category + ", " + action + ", " + label + ", " + value);
   ga('send', event);
+
+  // TODO: Adblockers break the callback
 }
 
 function trackLinkClick(element) {
@@ -90,4 +92,4 @@ var trackElements = function(selector) {
   });
 };
 
-trackElements('form,a');
+//trackElements('form,a');
