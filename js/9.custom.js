@@ -1,10 +1,10 @@
-var wow = new WOW({
-  boxClass: 'wow',
-  animateClass: 'animated',
-  mobile: false,
-  offset: 120
-});
-wow.init();
+// var wow = new WOW({
+//   boxClass: 'wow',
+//   animateClass: 'animated',
+//   mobile: false,
+//   offset: 120
+// });
+// wow.init();
 
 $('form').validate({
   rules: {

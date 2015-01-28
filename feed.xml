@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sean Wilson, Web and Mobile Developer, Edinburgh, UK</title>
-    <description>Experienced developer offering web, mobile (Android, iOS, PhoneGap), SEO, cloud (Heroku, AWS, Google Apps), JavaScript and WordPress services.</description>
+    <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 27 Jan 2015 13:57:27 +0000</pubDate>
-    <lastBuildDate>Tue, 27 Jan 2015 13:57:27 +0000</lastBuildDate>
+    <pubDate>Wed, 28 Jan 2015 18:15:15 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Jan 2015 18:15:15 +0000</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
