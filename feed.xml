@@ -5,9 +5,42 @@
     <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 28 Jan 2015 18:15:15 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Jan 2015 18:15:15 +0000</lastBuildDate>
+    <pubDate>Fri, 30 Jan 2015 13:56:16 +0000</pubDate>
+    <lastBuildDate>Fri, 30 Jan 2015 13:56:16 +0000</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Download a Git subdirectory from GitHub</title>
+        <description>&lt;p&gt;Have you ever needed to download only a subdirectory from a &lt;a href=&quot;http://github.com&quot;&gt;GitHub&lt;/a&gt; project without downloading the entire repository? Surprisingly, there doesn’t seem to be a way of doing this easily using  &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;. A somewhat unexpected solution is to use &lt;a href=&quot;http://subversion.apache.org/&quot;&gt;SVN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;First get the URL of the subfolder. GitHub URLs have the form:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/author/repo-name/tree/master/subdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then replace &lt;code&gt;/tree/master/&lt;/code&gt; with &lt;code&gt;/trunk/&lt;/code&gt; to get:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/author/repo/trunk/subdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can now download the subdirectory you’re interested in using SVN’s export command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;svn export https://github.com/author/repo/trunk/subdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example, this command will download a &lt;a href=&quot;https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/hello-world&quot;&gt;“Hello World” Chrome extension sample from GitHub&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;svn export https://github.com/GoogleChrome/chrome-app-samples/trunk/samples/hello-world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Credit: &lt;a href=&quot;http://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/download-git-repo-subdirectory</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/download-git-repo-subdirectory</guid>
+        
+        
+      </item>
     
       <item>
         <title>Solution: Themes and widgets showing multiple languages when using WPML WordPress plugin</title>
@@ -44,7 +77,7 @@
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Use a hidden page on your site that you initially browse to that attaches a
+    &lt;p&gt;Use a hidden page on your site that you initially browse to that attaches a&lt;br /&gt;
 &lt;a href=&quot;https://developers.google.com/analytics/devguides/platform/customdimsmets&quot;&gt;custom dimension&lt;/a&gt; to your Google Analytic’s user.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
