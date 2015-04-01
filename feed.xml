@@ -5,9 +5,67 @@
     <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 Mar 2015 04:01:17 +0100</pubDate>
-    <lastBuildDate>Mon, 30 Mar 2015 04:01:17 +0100</lastBuildDate>
+    <pubDate>Wed, 01 Apr 2015 22:50:35 +0100</pubDate>
+    <lastBuildDate>Wed, 01 Apr 2015 22:50:35 +0100</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Google Drive: Publicly hosting a static website</title>
+        <description>&lt;p&gt;I frequently need to demo work in progress web sites and web apps to people I’m working with. I was looking for the most convenient way to do this and found that &lt;a href=&quot;https://drive.google.com&quot;&gt;Google Drive&lt;/a&gt; was a good fit to letting me publicly share web development projects.&lt;/p&gt;
+
+&lt;p&gt;Google Drive provides an easy way to store and share documents in the cloud. The &lt;a href=&quot;https://www.google.co.uk/drive/download/&quot;&gt;Google Drive desktop app&lt;/a&gt; also conveniently keeps a folder on your machine in sync with your online Google Drive folder in the same way &lt;a href=&quot;http://www.dropbox.com&quot;&gt;Dropbox&lt;/a&gt; does. This post explains how to use Google Drive to publicly share a folder that contains a static website from your machine.&lt;/p&gt;
+
+&lt;h2 id=&quot;publicly-sharing-a-google-drive-folder-as-a-website&quot;&gt;Publicly sharing a Google Drive folder as a website&lt;/h2&gt;
+
+&lt;p&gt;First visit your online Google Drive folder at https://drive.google.com then:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new folder e.g. called &lt;code&gt;Public&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Right-click on the new folder and select “Share…”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select the “Anyone with the link can view” permission for the folder.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Take note of the sharing link that is display. It will look something like this &lt;code&gt;https://drive.google.com/folderview?id=FOLDER_ID&amp;amp;usp=sharing&lt;/code&gt; where &lt;code&gt;FOLDER_ID&lt;/code&gt; is a long string of text and numbers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Save the updated folder permissions&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy your website files into your new Drive folder. One way to do this is to drag and drop the files into your browser. Another way is to copy the files into the local Google Drive folder that corresponds to your new public Drive folder and waiting for the Google Drive desktop app to sync the files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you now visit &lt;code&gt;http://googledrive.com/host/FOLDER_ID/&lt;/code&gt; in your browser, the &lt;code&gt;index.html&lt;/code&gt; page in this folder will be opened as a web page. If you want to open a specific page within the folder such as one called &lt;code&gt;example.html&lt;/code&gt;, use the URL &lt;code&gt;http://googledrive.com/host/FOLDER_ID/example.html&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;publicly-sharing-multiple-websites-easily-using-google-drive&quot;&gt;Publicly sharing multiple websites easily using Google Drive&lt;/h2&gt;
+
+&lt;p&gt;Instead of having to go through this every time you want to share a new website with someone in the future, a simple approach is to use subdirectories within a single publicly shared folder:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create and publicly share one Google Drive folder called &lt;code&gt;Public&lt;/code&gt; as described above.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To share a new website, create a folder under the &lt;code&gt;Public&lt;/code&gt; folder such as one called &lt;code&gt;website1&lt;/code&gt;, copy the website files into this folder and then use a URL of this form to share the website: &lt;code&gt;http://googledrive.com/host/FOLDER_ID/website1/&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;With the above system set up, you can now conveniently share a static website with somebody by copying the files to your local Google Drive folder and emailing a link. When working in remote teams, this can be valuable for quickly demoing and getting feedback on iterative changes being made to a work in progress site.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Apr 2015 00:00:00 +0100</pubDate>
+        <link>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</guid>
+        
+        
+      </item>
     
       <item>
         <title>Get internal and external IP address on Mac with Bash</title>

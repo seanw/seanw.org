@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</loc>
+    <lastmod>2015-04-01T00:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
     <priority>0.8</priority>
@@ -27,13 +32,13 @@
   </url>
   <url>
     <loc>https://www.seanw.org/</loc>
-    <lastmod>2015-03-30T04:01:17+01:00</lastmod>
+    <lastmod>2015-04-01T22:50:35+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.seanw.org/blog/</loc>
-    <lastmod>2015-03-30T04:01:17+01:00</lastmod>
+    <lastmod>2015-04-01T22:50:35+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

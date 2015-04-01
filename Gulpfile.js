@@ -120,7 +120,7 @@ function jekyllBuild(done) {
 }
 
 gulp.task('commit-and-deploy', function(done) {
-  return require('child_process', done).exec('git add . && git commit && git push && gulp deploy', {
+  return require('child_process', done).exec('git add . && git commit -m "..." && git push && gulp deploy', {
     stdio: 'inherit'
   }, done);
 });
