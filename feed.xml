@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sean Wilson, Web and Mobile Developer, Edinburgh, UK</title>
+    <description></description>
+    <link>https://www.seanw.org/</link>
+    <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 05 Apr 2015 20:25:04 +0100</pubDate>
+    <lastBuildDate>Sun, 05 Apr 2015 20:25:04 +0100</lastBuildDate>
+    <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Google Drive: Publicly hosting a static website</title>
+        <description>&lt;p&gt;I frequently need to demo work in progress web sites and web apps to people I’m working with. I was looking for the most convenient way to do this and found that &lt;a href=&quot;https://drive.google.com&quot;&gt;Google Drive&lt;/a&gt; was a good fit to letting me publicly share web development projects.&lt;/p&gt;
+
+&lt;p&gt;Google Drive provides an easy way to store and share documents in the cloud. The &lt;a href=&quot;https://www.google.co.uk/drive/download/&quot;&gt;Google Drive desktop app&lt;/a&gt; also conveniently keeps a folder on your machine in sync with your online Google Drive folder in the same way &lt;a href=&quot;http://www.dropbox.com&quot;&gt;Dropbox&lt;/a&gt; does. This post explains how to use Google Drive to publicly share a folder that contains a static website from your machine.&lt;/p&gt;
+
+&lt;h2 id=&quot;publicly-sharing-a-google-drive-folder-as-a-website&quot;&gt;Publicly sharing a Google Drive folder as a website&lt;/h2&gt;
+
+&lt;p&gt;First visit your online Google Drive folder at https://drive.google.com then:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new folder e.g. called &lt;code&gt;Public&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Right-click on the new folder and select “Share…”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select the “Anyone with the link can view” permission for the folder.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Take note of the sharing link that is display. It will look something like this &lt;code&gt;https://drive.google.com/folderview?id=FOLDER_ID&amp;amp;usp=sharing&lt;/code&gt; where &lt;code&gt;FOLDER_ID&lt;/code&gt; is a long string of text and numbers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Save the updated folder permissions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy your website files into your new Drive folder. One way to do this is to drag and drop the files into your browser. Another way is to copy the files into the local Google Drive folder that corresponds to your new public Drive folder and waiting for the Google Drive desktop app to sync the files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you now visit &lt;code&gt;http://googledrive.com/host/FOLDER_ID/&lt;/code&gt; in your browser, the &lt;code&gt;index.html&lt;/code&gt; page in this folder will be opened as a web page. If you want to open a specific page within the folder such as one called &lt;code&gt;example.html&lt;/code&gt;, use the URL &lt;code&gt;http://googledrive.com/host/FOLDER_ID/example.html&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;publicly-sharing-multiple-websites-easily-using-google-drive&quot;&gt;Publicly sharing multiple websites easily using Google Drive&lt;/h2&gt;
+
+&lt;p&gt;Instead of having to go through this every time you want to share a new website with someone in the future, a simple approach is to use subdirectories within a single publicly shared folder:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create and publicly share one Google Drive folder called &lt;code&gt;Public&lt;/code&gt; as described above.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To share a new website, create a folder under the &lt;code&gt;Public&lt;/code&gt; folder such as one called &lt;code&gt;website1&lt;/code&gt;, copy the website files into this folder and then use a URL of this form to share the website: &lt;code&gt;http://googledrive.com/host/FOLDER_ID/website1/&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;With the above system set up, you can now conveniently share a static website with somebody by copying the files to your local Google Drive folder and emailing a link. When working in remote teams, this can be valuable for quickly demoing and getting feedback on iterative changes being made to a work in progress site.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Apr 2015 00:00:00 +0100</pubDate>
+        <link>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Get internal and external IP address on Mac with Bash</title>
+        <description>&lt;p&gt;Frequently while coding I need to know the internal and external IP address of my development machine. For example, when your machine is serving a website from a locally running web server, the internal IP address can be used to test the site from a smartphone browser connected to the same network. Likewise, the external IP address is useful when you want to make a local web server publicly accessible or when you need to whitelist your IP address in the firewall settings of an external server.&lt;/p&gt;
+
+&lt;p&gt;To help with the above, I wrote a simple Bash function that will list the internal IP address for active wifi and ethernet connections as well as the external IP address on a Mac (tested on OS X Yosemite). When you run the function from the terminal, you’ll see something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;seanw@mac:~$ myip
+Internal IP address (wired): none
+Internal IP address (wifi):  192.168.0.2
+External IP address:         41.52.154.137
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make this function available from the command-line, add the following to your &lt;code&gt;.bash_profile&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;myip() {
+  external_ip=`dig +short myip.opendns.com @resolver1.opendns.com 2&amp;gt; /dev/null || echo none`
+
+  echo &quot;Internal IP address (wired): &quot;`ipconfig getifaddr en1 || echo none`
+  echo &quot;Internal IP address (wifi):  &quot;`ipconfig getifaddr en0 || echo none`
+  echo &quot;External IP address:         $external_ip&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Download a Git subdirectory from GitHub</title>
+        <description>&lt;p&gt;Have you ever needed to download only a subdirectory from a &lt;a href=&quot;http://github.com&quot;&gt;GitHub&lt;/a&gt; project without downloading the entire repository? Surprisingly, there doesn’t seem to be a way of doing this easily using  &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;. A somewhat unexpected solution is to use &lt;a href=&quot;http://subversion.apache.org/&quot;&gt;SVN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;First get the URL of the subfolder. GitHub URLs have the form:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/author/repo-name/tree/master/subdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then replace &lt;code&gt;/tree/master/&lt;/code&gt; with &lt;code&gt;/trunk/&lt;/code&gt; to get:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/author/repo/trunk/subdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can now download the subdirectory you’re interested in using SVN’s export command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;svn export https://github.com/author/repo/trunk/subdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example, this command will download a &lt;a href=&quot;https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/hello-world&quot;&gt;“Hello World” Chrome extension sample from GitHub&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;svn export https://github.com/GoogleChrome/chrome-app-samples/trunk/samples/hello-world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Credit: &lt;a href=&quot;http://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/download-git-repo-subdirectory</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/download-git-repo-subdirectory</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Fix: WPML for WordPress causes theme to show multiple languages at the same time</title>
+        <description>&lt;h2 id=&quot;wordpress-multilingual-plugin-wpml&quot;&gt;WordPress Multilingual plugin (WPML)&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://wpml.org/&quot;&gt;WordPress Multilingual (WPML)&lt;/a&gt; plugin offers a comprehensive solution for transitioning from a single language &lt;a href=&quot;https://wordpress.org/&quot;&gt;WordPress&lt;/a&gt; website to one that supports multiple languages. Once installed, you can add several translations of individual posts and custom posts from within the WordPress admin interface. When viewing a page for a specific language on your site, page content is then generated by pulling in posts for the current language.&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-theme-and-widgets-showing-multiple-languages&quot;&gt;Problem: Theme and widgets showing multiple languages&lt;/h2&gt;
+
+&lt;p&gt;Many themes and plugins will work out of the box with WPML but a common problem is themes and plugins will display content for all languages instead of only the current one. For example, I’ve worked with sites that use the &lt;a href=&quot;http://www.woothemes.com/products/canvas/&quot;&gt;Canvas theme&lt;/a&gt; from &lt;a href=&quot;http://www.woothemes.com/products/canvas/&quot;&gt;WooThemes&lt;/a&gt; which mostly works with WPML but has a few multilingual usage problems. The bundled widget that shows custom posts to create a slideshow works with WPML in the way you’d expect but the widget that shows custom posts to display customer feedback quotes will show a mixture of languages. This led to a French site showing feedback in both French and English!&lt;/p&gt;
+
+&lt;h2 id=&quot;solution-set-suppressfilters-to-false&quot;&gt;Solution: Set &lt;code&gt;suppress_filters&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;A common cause of this is the &lt;code&gt;suppress_filters&lt;/code&gt; flag being set to &lt;code&gt;true&lt;/code&gt; in the PHP code for the theme or widget that queries for posts to show. This flag tells WordPress to ignore custom filters that plugins apply when querying for posts. WPML add its own filter so that queries will only return posts for the current language. However, there are several ways to query for posts that will inadvertently disable this filter which causes the above problem of posts from all languages being shown. A frequent source of this issue is the &lt;a href=&quot;http://codex.wordpress.org/Template_Tags/get_posts&quot;&gt;&lt;code&gt;get_posts&lt;/code&gt;&lt;/a&gt; function. By default, &lt;code&gt;get_posts&lt;/code&gt; sets &lt;code&gt;suppress_filters&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; which disables WPML’s filters!  Other querying functions like &lt;a href=&quot;http://codex.wordpress.org/Function_Reference/query_posts&quot;&gt;query_posts&lt;/a&gt; set &lt;code&gt;suppress_filters&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; by default so will work with WPML as you’d expect.&lt;/p&gt;
+
+&lt;p&gt;The solution to fixing the Canvas theme feedback widget was first to locate the PHP code that generated the HTML shown on the frontend and work backwards to find the WordPress query that gathered the list of feedback posts to show. I found the query was being performed by a call to &lt;code&gt;get_posts&lt;/code&gt;. After setting the &lt;code&gt;suppress_filters&lt;/code&gt; flag to &lt;code&gt;false&lt;/code&gt; for this query when calling this function, the widget correctly showed posts only for the current language.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Hiding visits to your own site in Google Analytics</title>
+        <description>&lt;p&gt;When working on a site, it’s common to browse it yourself from multiple browsers, multiple devices and multiple locations for testing purposes. For analytics about your user behaviour to be useful, we need a way to exclude this internal traffic from Google Analytics reports. In this post I explain a method I found useful for hiding visits to your own site when you want to be able to test your site from any browser or any location.&lt;/p&gt;
+
+&lt;p&gt;Google recommends &lt;a href=&quot;https://support.google.com/analytics/answer/1034840?hl=en-GB&quot;&gt;setting up a filter on an IP range&lt;/a&gt; within Google Analytics to filter out internal traffic. This would be a foolproof method if your work IP address is always within a set range but isn’t going to help if you sometimes browse from a different location. However, this method could be used in combination with the following one I prefer.&lt;/p&gt;
+
+&lt;h2 id=&quot;excluding-traffic-using-a-custom-dimension&quot;&gt;Excluding traffic using a custom dimension&lt;/h2&gt;
+
+&lt;p&gt;My preferred method is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use a hidden page on your site that you initially browse to that attaches a&lt;br /&gt;
+&lt;a href=&quot;https://developers.google.com/analytics/devguides/platform/customdimsmets&quot;&gt;custom dimension&lt;/a&gt; to your Google Analytic’s user.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Filter that user’s activity from reports by looking for that custom dimension from within the Google Analytics web interface.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As well as working from any location, this also has the advantage of letting you confirm analytics activity is being successfully sent unlike approaches that disable the Google Analytics script for internal users altogether. I’ll now explain how to implement the above approach.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-custom-dimension-for-internal-users&quot;&gt;Creating a custom dimension for internal users&lt;/h2&gt;
+
+&lt;p&gt;First you have to create a custom Google Analytics dimension:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Visit the Google Analytics admin panel and select the site you’re working on from the “property” field.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select “Custom Definitions”, “Custom Dimensions” then “New Custom Dimension”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new dimension with the name “Internal user” with “Scope” set to “User”. This is the label we’ll use to track internal users.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Take note of the value of the index field that appears next to your new dimension as you’ll need it in the next step.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;a-hidden-page-to-label-you-as-an-internal-user&quot;&gt;A hidden page to label you as an internal user&lt;/h2&gt;
+
+&lt;p&gt;You then need to create a hidden page on your site that sets this dimension for the current user by sending a message to Google Analytics. You can do this with HTML such as the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow&quot;/&amp;gt;
+    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;Internal user dimension for Google Analytics set so activity from
+    this browser can be filtered. Redirecting to homepage...&amp;lt;/p&amp;gt;
+
+    &amp;lt;script&amp;gt;
+      &amp;lt;!-- Standard Google Analytics snippet --&amp;gt;
+      (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]
+      ||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+      Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=
+      1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,&#39;script&#39;,
+      &#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
+
+      ga(&#39;create&#39;, /*YOUR GOOGLE ANALYTICS ID HERE*/, &#39;auto&#39;);
+      ga(&#39;require&#39;, &#39;displayfeatures&#39;);
+      &amp;lt;!------------------------------&amp;gt;
+
+      ga(&#39;set&#39;, &#39;dimension/*YOUR DIMENSION INDEX HERE*/&#39;, &#39;true&#39;);
+      ga(&#39;send&#39;, &#39;pageview&#39;);
+      setTimeout(function() { window.location.href = &quot;/&quot;; }, 5000);
+    &amp;lt;/script&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The JavaScript code does the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Uses the standard script snippet for loading Google Analytics. You’ll need to update the snippet with your Google Analytics ID.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sets the “Internal user” dimension for the current user. You’ll need to update the snippet with your dimension index.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Redirects the user back to the homepage after a delay.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We also set the &lt;code&gt;robots&lt;/code&gt; metatag so web crawlers won’t list this page in search results.&lt;/p&gt;
+
+&lt;h2 id=&quot;excluding-your-custom-dimension-from-reports&quot;&gt;Excluding your custom dimension from reports&lt;/h2&gt;
+
+&lt;p&gt;Next, you need to exclude any users that have the custom dimension attached to them from reports:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;From the Google Analytics admin panel, select “Filters” then “New Filter”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Set the filter type to “Custom”, set “Filter Field” to “Internal user”, set “Filter Pattern” to “true” then save the filter.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Now any time you want to browse your own site on a different browser or device, simply go to your hidden page first and your pesky internal traffic will be filtered out of your Google Analytics reports. Hopefully you’ll find this a useful way for eliminating noise from your user analytics.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Jan 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/hide-own-traffic-in-google-analytics</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/hide-own-traffic-in-google-analytics</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>submit-sitemap: Node.js module to submit sitemaps to search engines</title>
+        <description>&lt;p&gt;I’ve just uploaded a small &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; module for submitting/pinging sitemaps to search engines called &lt;a href=&quot;https://github.com/seanw/submit-sitemap&quot;&gt;submit-sitemap&lt;/a&gt;. This is meant to be used after you’ve made updates to your site to encourage crawlers to reindex your pages.&lt;/p&gt;
+
+&lt;p&gt;The module currently submits your sitemap to &lt;a href=&quot;http://www.google.com&quot;&gt;Google&lt;/a&gt; and &lt;a href=&quot;http://www.bing.com&quot;&gt;Bing&lt;/a&gt;. This saves you from having to use &lt;a href=&quot;https://support.google.com/sites/answer/100283?hl=en&quot;&gt;Google’s webmaster tools&lt;/a&gt; and &lt;a href=&quot;http://www.bing.com/webmaster/help/how-to-submit-sitemaps-82a15bd4&quot;&gt;Bing’s webmaster tools&lt;/a&gt; to submit your sitemap manually.&lt;/p&gt;
+
+&lt;p&gt;For example, I’ve used this in the last stage of &lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; build scripts that generate and deploy static sites in the following way:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Generate a static site using &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Generate a sitemap file for the static site using &lt;a href=&quot;https://www.npmjs.com/package/gulp-sitemap&quot;&gt;gulp-sitemap&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Upload the site and sitemap to &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github pages&lt;/a&gt; using &lt;a href=&quot;https://github.com/rowoot/gulp-gh-pages&quot;&gt;gulp-gh-pages&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Finally, use submit-sitemap to submit the sitemap to search engines for indexing.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To install the module:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install submit-sitemap --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To submit your sitemap:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;submit-sitemap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://www.seanw.org/sitemap.xml&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The optional callback parameter can be used to respond to success and failure:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;On success, &lt;code&gt;err&lt;/code&gt; will be undefined.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On error, &lt;code&gt;err&lt;/code&gt; will be set to an error message. This happens if the sitemap URL could not be reached or any of the sitemap submission attempts failed.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find out more about the submit-sitemap module on &lt;a href=&quot;https://www.npmjs.com/package/submit-sitemap&quot;&gt;npmjs.com&lt;/a&gt; and &lt;a href=&quot;https://github.com/seanw/submit-sitemap&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/submit-sitemap-with-node-js</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/submit-sitemap-with-node-js</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
