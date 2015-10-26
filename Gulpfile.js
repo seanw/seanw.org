@@ -10,7 +10,7 @@ var config = {
     },
   },
 };
-var secretConfig = require('./secret-config.js')(config);
+var secretConfig = require('./_secret-config.js')(config);
 
 var uglify = require('gulp-uglifyjs');
 var gulp = require('gulp');
