@@ -5,9 +5,61 @@
     <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 26 Oct 2015 20:13:59 +0000</pubDate>
-    <lastBuildDate>Mon, 26 Oct 2015 20:13:59 +0000</lastBuildDate>
+    <pubDate>Sun, 15 Nov 2015 03:58:17 +0000</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2015 03:58:17 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>LiveReload for Chrome extensions with Gulp</title>
+        <description>&lt;p&gt;LiveReload is a fantastic feature to add to your development workflow to increase your productivity. The general idea is that when a change occurs to a file that makes up your app, your app is automatically rebuilt and the app restarts itself. This saves you from manually rebuilding and restarting your app each time you make a change and generally makes development much more pleasant.&lt;/p&gt;
+
+&lt;p&gt;There are LiveReload implementations available for many languages and frameworks such as &lt;a href=&quot;https://github.com/mklabs/tiny-lr&quot;&gt;tiny-lr&lt;/a&gt; which can be used with &lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; for web development. However, I recently found the standard way of using tiny-lr does not work when developing Chrome extensions without a slight change.&lt;/p&gt;
+
+&lt;p&gt;To get started, you need to create a &lt;code&gt;gulpfile.js&lt;/code&gt; file containing something like the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;gulp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tinyLr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;tiny-lr&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;watch&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;liveReload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tinyLr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;liveReload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35729&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;**/*.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;**/*.html&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;**/*.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;liveReload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;changed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When you run &lt;code&gt;gulp watch&lt;/code&gt; a tiny-lr server is started which will communicate between the Gulp task and your app. The Gulp task then watches the current folder and subfolders for any changes to &lt;code&gt;css&lt;/code&gt;, &lt;code&gt;html&lt;/code&gt; and &lt;code&gt;js&lt;/code&gt; files. If a change is detected, the tiny-lr server is notified.&lt;/p&gt;
+
+&lt;p&gt;The next stage in the process when a change is identified is that tiny-lr should instruct your app to restart. To create the link between tiny-lr and your app, you normally include a tiny-lr script at startup in your app using the following snippet:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://localhost:35729/livereload.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;However, due to the increased security restrictions of Chrome extensions, you’ll see this error message on startup:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Refused to load the script &#39;http://localhost:35729/livereload.js&#39; because it violates the following Content Security Policy directive: &quot;script-src &#39;self&#39; &#39;unsafe-eval&#39;&quot;.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The problem is you cannot load external JavaScript files without (whitelisting secure script locations)[https://developer.chrome.com/extensions/contentSecurityPolicy#relaxing-remote-script]. However, there’s a simpler alternative.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;code&gt;node-modules&lt;/code&gt; folder that tiny-lr is installed under, you can find the above tiny-lr script our app was trying to load via tiny-lr’s server in the file &lt;code&gt;node_modules/tiny-lr/node_modules/livereload-js/dist/livereload.js&lt;/code&gt;. To work around the external JavaScript loading issue, we can instead load this file directly.&lt;/p&gt;
+
+&lt;p&gt;One last piece in the puzzle is the script needs to know the host and port of the tiny-lr server. This information can be set via URL parameters. The working &lt;code&gt;script&lt;/code&gt; tag to include in your app is then as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;node_modules/tiny-lr/node_modules/livereload-js/dist/livereload.js?host=localhost&amp;amp;port=35729&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now whenever you edit a development file, your Chrome extension should automatically reload itself. Happy developing!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Nov 2015 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/livereload-for-chrome-extensions</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/livereload-for-chrome-extensions</guid>
+        
+        
+      </item>
     
       <item>
         <title>Google Drive: Publicly hosting a static website</title>

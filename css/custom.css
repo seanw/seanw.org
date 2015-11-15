@@ -230,3 +230,6 @@ form {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.meta {
+  opacity: 0.5;
+}
