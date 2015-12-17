@@ -73,7 +73,7 @@ gulp.task("html", function() {
   return gulp.src(config.paths.html.src, {
       base: './'
     })
-    // .pipe(minifyHTML())
+    .pipe(minifyHTML())
     .pipe(gulp.dest('./'));
 });
 
@@ -84,14 +84,14 @@ gulp.task("css", function() {
     .pipe(less().on('error', function (err) {
       console.log(err);
     }))
-    // .pipe(minifyCSS())
+    .pipe(minifyCSS())
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('_site/css/'));
 });
 
 gulp.task('js', function() {
   return gulp.src('js/*.js')
-  // .pipe(uglify())
+  .pipe(uglify())
   .pipe(concat('scripts.js'))
   .pipe(gulp.dest('_site/js/'));
 });

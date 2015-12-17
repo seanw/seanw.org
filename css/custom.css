@@ -2,13 +2,11 @@
 @section1-color: white;
 @section2-color: #f3f3f3;
 @highlight-color: #2197ff;
-
 body {
   font-family: 'Open Sans', 'Times New Roman', serif;
   font-weight: 300;
   font-size: 15px;
 }
-
 .intro-header .post-heading .meta,
 .post-preview > .post-meta {
   font-family: 'Open Sans', 'Times New Roman', serif;
@@ -18,26 +16,25 @@ body {
   background-color: #181E23;
 }
 .site-heading {
-  padding: 100px 0 100px !important;
+  padding: 100px 0 !important;
 }
-
 a,
-a:hover,
 a:focus {
   color: @highlight-color;
   text-decoration: none !important;
   font-weight: 300;
 }
-
+a:hover {
+  color: @highlight-color;
+  text-decoration: underline !important;
+}
 body {
   webkit-tap-highlight-color: @highlight-color;
 }
-
-hr{
+hr {
   width: 40%;
   border-color: #CCC;
 }
-
 .post-meta,
 .meta {
   text-transform: uppercase !important;
@@ -45,57 +42,46 @@ hr{
 .error {
   color: #DD0000;
 }
-
 .navbar-toggle {
   border-color: transparent;
   border-radius: 0;
 }
-
 .navbar-toggle {
   border: none;
 }
-
 .navbar a {
   color: white !important;
   text-transform: none !important;
 }
-
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
   background-color: transparent !important;
 }
-
 .navbar-collapse {
   border: none;
 }
-
-
 @media (min-width: 768px) {
   .navbar .navbar-nav {
     display: inline-block;
     float: none;
   }
-
   .navbar .navbar-collapse {
     text-align: center;
   }
 }
-
 @media (max-width: 768px) {
   .navbar-custom {
     background-color: black;
   }
 }
-
 .icon-bar {
-  background-color:white !important;
+  background-color: white !important;
 }
-
 body,
 .form-control {
   /*font-size: 15px;*/
   color: black !important;
 }
-
 h1 {
   font-size: 40px;
   color: #505050;
@@ -104,7 +90,6 @@ h1 {
   font-weight: 400;
   color: @highlight-color;
 }
-
 h2 {
   font-size: 19px;
   font-weight: 400;
@@ -113,7 +98,6 @@ h2 {
   /*text-transform: uppercase;*/
   color: @highlight-color;
 }
-
 h3 {
   font-size: 17px;
   font-weight: 400;
@@ -122,18 +106,15 @@ h3 {
   /*text-transform: uppercase;*/
   color: @highlight-color;
 }
-
 .intro {
   font-size: 19px;
   font-weight: 300;
   text-align: center;
   /*text-transform: uppercase;*/
 }
-
-header{
-  margin:0 !important;
+header {
+  margin: 0 !important;
 }
-
 .site-heading h1 {
   /*text-align: left;*/
   font-size: 85px;
@@ -142,6 +123,9 @@ header{
   text-transform: none;
   padding-top: 20px;
 }
+.site-heading a:hover {
+  text-decoration: none !important;
+}
 
 .site-heading h2 {
   /*text-align: left;*/
@@ -149,21 +133,18 @@ header{
   font-weight: 300;
   color: white;
   text-transform: none;
-  margin-top:-4px;
+  margin-top: -4px;
   opacity: 0.5;
   /*font-style: italic;*/
 }
-
 header {
   height: 350px;
 }
-
-.btn-primary{
+.btn-primary {
   color: white;
   background-color: @highlight-color;
   border-color: transparent;
 }
-
 input,
 textarea {
   font-family: 'Open Sans', 'FontAwesome', serif;
@@ -175,60 +156,47 @@ textarea {
   -webkit-appearance: none;
   resize: none;
 }
-
 footer {
   background-color: #F0F0F0;
-  padding: 20px 0 20px;
+  padding: 20px 0;
   color: @highlight-color;
   background-color: #222;
 }
-
 footer i {
-  padding:10px 0px 0 20px;
+  padding: 10px 0 0 20px;
   color: #AAA !important;
 }
-
 .fa-stack {
   color: @highlight-color;
 }
-
 .vcenter-col {
-  float:none;
-  display:inline-block;
-  vertical-align:middle;
-  margin-right:-4px;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -4px;
 }
-
 @media (min-width: 300px) {
-  .section-content
-  {
+  .section-content {
     max-width: 800px;
     margin: 0 auto;
   }
 }
-
 .section {
   padding: 5px 20px;
 }
-
 .section:nth-child(even) {
   background-color: @section1-color !important;
-
 }
-
 .section:nth-child(odd) {
   background-color: @section2-color !important;
 }
-
 .form-group {
   margin-bottom: -10px !important;
 }
-
 form {
   margin: 0 auto;
-  max-width: 500px ;
+  max-width: 500px;
 }
-
 #disqus_thread {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -236,7 +204,6 @@ form {
 .meta {
   opacity: 0.5;
 }
-
 .faded {
   opacity: 0.5;
 }
