@@ -236,3 +236,7 @@ form {
 .meta {
   opacity: 0.5;
 }
+
+.faded {
+  opacity: 0.5;
+}
