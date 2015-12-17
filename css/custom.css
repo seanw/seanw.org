@@ -14,6 +14,9 @@ body {
   font-family: 'Open Sans', 'Times New Roman', serif;
   font-weight: 400;
 }
+.intro-header {
+  background-color: #181E23;
+}
 .site-heading {
   padding: 100px 0 100px !important;
 }
@@ -147,7 +150,7 @@ header{
   color: white;
   text-transform: none;
   margin-top:-4px;
-  color: #777;
+  opacity: 0.5;
   /*font-style: italic;*/
 }
 
