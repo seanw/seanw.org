@@ -29,15 +29,15 @@ var http = require('http');
 var cloudflare = require('cloudflare').createClient(config.cloudflareAccount);
 var less = require('gulp-less');
 
-var configs = {
+var modes = {
   prod: { minify: true},
   dev: { minify: false}
 };
 
-var mode = args.mode || 'dev';
-var config = configs[mode];
+var modeSelect = args.mode || 'dev';
+var mode = modes[modeSelect];
 
-console.log("Using mode " + mode, config);
+console.log("Using mode " + modeSelect, mode);
 
 gulp.task('imagemin', function() {
   return gulp.src(config.paths.img, {
@@ -62,11 +62,11 @@ gulp.task('upload', function() {
     .pipe(ghPages(config.ghPages));
 });
 
-gulp.task('deploy', function() {
-  if (mode !== 'prod')
+gulp.task('deploy', ['build'], function() {
+  if (modeSelect !== 'prod')
     throw "You can only deploy in production mode";
 
-  return runSequence(['html', 'css'], 'upload', 'purge-online-cache', 'submit-sitemap');
+  return runSequence('upload', 'purge-online-cache', 'submit-sitemap');
 });
 
 gulp.task('submit-sitemap', function(cb) {
@@ -88,7 +88,7 @@ gulp.task("html", function() {
   return gulp.src(config.paths.html.src, {
       base: './'
     })
-    .pipe(gulpIf(config.minify, minifyHTML()))
+    .pipe(gulpIf(mode.minify, minifyHTML()))
     .pipe(gulp.dest('./'));
 });
 
@@ -99,14 +99,14 @@ gulp.task("css", function() {
     .pipe(less().on('error', function (err) {
       console.log(err);
     }))
-    .pipe(gulpIf(config.minify, minifyCSS()))
+    .pipe(gulpIf(mode.minify, minifyCSS()))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('_site/css/'));
 });
 
 gulp.task('js', function() {
   return gulp.src('js/*.js')
-  .pipe(gulpIf(config.minify, uglify()))
+  .pipe(gulpIf(mode.minify, uglify()))
   .pipe(concat('scripts.js'))
   .pipe(gulp.dest('_site/js/'));
 });
