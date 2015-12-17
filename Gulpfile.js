@@ -66,7 +66,7 @@ gulp.task('deploy', ['build'], function() {
   if (modeSelect !== 'prod')
     throw "You can only deploy in production mode";
 
-  return runSequence('upload', 'purge-online-cache', 'submit-sitemap');
+  return runSequence(['html', 'css'], 'upload', 'purge-online-cache', 'submit-sitemap');
 });
 
 gulp.task('submit-sitemap', function(cb) {
@@ -88,8 +88,7 @@ gulp.task("html", function() {
   return gulp.src(config.paths.html.src, {
       base: './'
     })
-    //.pipe(gulpIf(mode.minify, minifyHTML()))
-    .pipe(minifyHTML())
+    .pipe(gulpIf(mode.minify, minifyHTML()))
     .pipe(gulp.dest('./'));
 });
 
@@ -100,16 +99,14 @@ gulp.task("css", function() {
     .pipe(less().on('error', function (err) {
       console.log(err);
     }))
-    //.pipe(gulpIf(mode.minify, minifyCSS()))
-    .pipe(minifyCSS())
+    .pipe(gulpIf(mode.minify, minifyCSS()))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('_site/css/'));
 });
 
 gulp.task('js', function() {
   return gulp.src('js/*.js')
-  // .pipe(gulpIf(mode.minify, uglify()))
-  .pipe(uglify())
+  .pipe(gulpIf(mode.minify, uglify()))
   .pipe(concat('scripts.js'))
   .pipe(gulp.dest('_site/js/'));
 });
