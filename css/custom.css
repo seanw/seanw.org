@@ -22,7 +22,6 @@ a,
 a:focus {
   color: @highlight-color;
   text-decoration: none !important;
-  font-weight: 300;
 }
 a:hover {
   color: @highlight-color;
@@ -126,7 +125,6 @@ header {
 .site-heading a:hover {
   text-decoration: none !important;
 }
-
 .site-heading h2 {
   /*text-align: left;*/
   /*font-size: 20px;*/
@@ -206,4 +204,9 @@ form {
 }
 .faded {
   opacity: 0.5;
+}
+.frame {
+  border: 1px solid #ddd;
+  margin: 20px 0;
+  padding: 25px;
 }
