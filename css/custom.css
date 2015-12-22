@@ -210,3 +210,12 @@ form {
   margin: 20px 0;
   padding: 25px;
 }
+
+.call-to-action {
+  background-color: #FFFECF;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+}
