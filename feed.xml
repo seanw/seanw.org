@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sean Wilson, Web and Mobile Developer, Edinburgh, UK</title>
+    <title>Sean Wilson, Web and Mobile App Developer, Edinburgh, UK</title>
     <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 22 Dec 2015 19:25:10 +0000</pubDate>
-    <lastBuildDate>Tue, 22 Dec 2015 19:25:10 +0000</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Wed, 13 Jan 2016 11:56:27 +0000</pubDate>
+    <lastBuildDate>Wed, 13 Jan 2016 11:56:27 +0000</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>LiveReload for Chrome extensions with Gulp</title>
@@ -17,7 +17,7 @@
 
 &lt;p&gt;To get started, you need to create a &lt;code&gt;gulpfile.js&lt;/code&gt; file containing something like the following:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;gulp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;gulp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tinyLr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;tiny-lr&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;watch&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -31,13 +31,13 @@
             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;When you run &lt;code&gt;gulp watch&lt;/code&gt; a tiny-lr server is started which will communicate between the Gulp task and your app. The Gulp task then watches the current folder and subfolders for any changes to &lt;code&gt;css&lt;/code&gt;, &lt;code&gt;html&lt;/code&gt; and &lt;code&gt;js&lt;/code&gt; files. If a change is detected, the tiny-lr server is notified.&lt;/p&gt;
 
 &lt;p&gt;The next stage in the process when a change is identified is that tiny-lr should instruct your app to restart. To create the link between tiny-lr and your app, you normally include a tiny-lr script at startup in your app using the following snippet:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://localhost:35729/livereload.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://localhost:35729/livereload.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;However, due to the increased security restrictions of Chrome extensions, you’ll see this error message on startup:&lt;/p&gt;
 
@@ -50,13 +50,13 @@
 
 &lt;p&gt;One last piece in the puzzle is the script needs to know the host and port of the tiny-lr server. This information can be set via URL parameters. The working &lt;code&gt;script&lt;/code&gt; tag to include in your app is then as follows:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;node_modules/tiny-lr/node_modules/livereload-js/dist/livereload.js?host=localhost&amp;amp;port=35729&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;node_modules/tiny-lr/node_modules/livereload-js/dist/livereload.js?host=localhost&amp;amp;port=35729&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now whenever you edit a development file, your Chrome extension should automatically reload itself. Happy developing!&lt;/p&gt;
 </description>
         <pubDate>Sun, 15 Nov 2015 00:00:00 +0000</pubDate>
-        <link>https://www.seanw.org/blog/livereload-for-chrome-extensions</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/livereload-for-chrome-extensions</guid>
+        <link>https://www.seanw.org/blog/livereload-for-chrome-extensions/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/livereload-for-chrome-extensions/</guid>
         
         
       </item>
@@ -113,8 +113,8 @@
 &lt;p&gt;With the above system set up, you can now conveniently share a static website with somebody by copying the files to your local Google Drive folder and emailing a link. When working in remote teams, this can be valuable for quickly demoing and getting feedback on iterative changes being made to a work in progress site.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Apr 2015 00:00:00 +0100</pubDate>
-        <link>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</guid>
+        <link>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive/</guid>
         
         
       </item>
@@ -143,8 +143,8 @@ External IP address:         41.52.154.137
 &lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
-        <link>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash</guid>
+        <link>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash/</guid>
         
         
       </item>
@@ -176,8 +176,8 @@ External IP address:         41.52.154.137
 &lt;p&gt;Credit: &lt;a href=&quot;http://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
-        <link>https://www.seanw.org/blog/download-git-repo-subdirectory</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/download-git-repo-subdirectory</guid>
+        <link>https://www.seanw.org/blog/download-git-repo-subdirectory/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/download-git-repo-subdirectory/</guid>
         
         
       </item>
@@ -197,8 +197,8 @@ External IP address:         41.52.154.137
 &lt;p&gt;The solution to fixing the Canvas theme feedback widget was first to locate the PHP code that generated the HTML shown on the frontend and work backwards to find the WordPress query that gathered the list of feedback posts to show. I found the query was being performed by a call to &lt;code&gt;get_posts&lt;/code&gt;. After setting the &lt;code&gt;suppress_filters&lt;/code&gt; flag to &lt;code&gt;false&lt;/code&gt; for this query when calling this function, the widget correctly showed posts only for the current language.&lt;/p&gt;
 </description>
         <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
-        <link>https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml</guid>
+        <link>https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml/</guid>
         
         
       </item>
@@ -315,8 +315,8 @@ External IP address:         41.52.154.137
 &lt;p&gt;Now any time you want to browse your own site on a different browser or device, simply go to your hidden page first and your pesky internal traffic will be filtered out of your Google Analytics reports. Hopefully you’ll find this a useful way for eliminating noise from your user analytics.&lt;/p&gt;
 </description>
         <pubDate>Thu, 22 Jan 2015 00:00:00 +0000</pubDate>
-        <link>https://www.seanw.org/blog/hide-own-traffic-in-google-analytics</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/hide-own-traffic-in-google-analytics</guid>
+        <link>https://www.seanw.org/blog/hide-own-traffic-in-google-analytics/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/hide-own-traffic-in-google-analytics/</guid>
         
         
       </item>
@@ -343,14 +343,14 @@ External IP address:         41.52.154.137
 
 &lt;p&gt;To submit your sitemap:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;submit-sitemap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;submit-sitemap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://www.seanw.org/sitemap.xml&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The optional callback parameter can be used to respond to success and failure:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;submitSitemap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourSitemapUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -364,8 +364,8 @@ External IP address:         41.52.154.137
 &lt;p&gt;You can find out more about the submit-sitemap module on &lt;a href=&quot;https://www.npmjs.com/package/submit-sitemap&quot;&gt;npmjs.com&lt;/a&gt; and &lt;a href=&quot;https://github.com/seanw/submit-sitemap&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
-        <link>https://www.seanw.org/blog/submit-sitemap-with-node-js</link>
-        <guid isPermaLink="true">https://www.seanw.org/blog/submit-sitemap-with-node-js</guid>
+        <link>https://www.seanw.org/blog/submit-sitemap-with-node-js/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/submit-sitemap-with-node-js/</guid>
         
         
       </item>

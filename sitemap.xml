@@ -1,37 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.seanw.org/blog/livereload-for-chrome-extensions</loc>
+    <loc>https://www.seanw.org/blog/livereload-for-chrome-extensions/</loc>
     <lastmod>2015-11-15T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive</loc>
+    <loc>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive/</loc>
     <lastmod>2015-04-01T00:00:00+01:00</lastmod>
   </url>
   <url>
-    <loc>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash</loc>
+    <loc>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash/</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://www.seanw.org/blog/download-git-repo-subdirectory</loc>
+    <loc>https://www.seanw.org/blog/download-git-repo-subdirectory/</loc>
     <lastmod>2015-01-30T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml</loc>
+    <loc>https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml/</loc>
     <lastmod>2015-01-27T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://www.seanw.org/blog/hide-own-traffic-in-google-analytics</loc>
+    <loc>https://www.seanw.org/blog/hide-own-traffic-in-google-analytics/</loc>
     <lastmod>2015-01-22T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://www.seanw.org/blog/submit-sitemap-with-node-js</loc>
+    <loc>https://www.seanw.org/blog/submit-sitemap-with-node-js/</loc>
     <lastmod>2015-01-21T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://www.seanw.org/</loc>
   </url>
   <url>
     <loc>https://www.seanw.org/blog/</loc>
   </url>
+  <url>
+    <loc>https://www.seanw.org/</loc>
+  </url>
+    <url>
+      <loc>https://www.seanw.org/blog/submit-sitemap-with-node-js/</loc>
+    </url>
+    <url>
+      <loc>https://www.seanw.org/blog/hide-own-traffic-in-google-analytics/</loc>
+    </url>
+    <url>
+      <loc>https://www.seanw.org/blog/themes-and-widgets-showing-multiple-languages-wpml/</loc>
+    </url>
+    <url>
+      <loc>https://www.seanw.org/blog/download-git-repo-subdirectory/</loc>
+    </url>
+    <url>
+      <loc>https://www.seanw.org/blog/mac-internal-external-ip-from-terminal-with-bash/</loc>
+    </url>
+    <url>
+      <loc>https://www.seanw.org/blog/publicly-host-and-share-websites-on-google-drive/</loc>
+    </url>
+    <url>
+      <loc>https://www.seanw.org/blog/livereload-for-chrome-extensions/</loc>
+    </url>
 </urlset>
