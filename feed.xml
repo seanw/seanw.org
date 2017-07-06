@@ -5,9 +5,9 @@
     <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 13 Jan 2016 11:56:27 +0000</pubDate>
-    <lastBuildDate>Wed, 13 Jan 2016 11:56:27 +0000</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Thu, 06 Jul 2017 17:38:30 +0100</pubDate>
+    <lastBuildDate>Thu, 06 Jul 2017 17:38:30 +0100</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>LiveReload for Chrome extensions with Gulp</title>
@@ -41,7 +41,7 @@
 
 &lt;p&gt;However, due to the increased security restrictions of Chrome extensions, you’ll see this error message on startup:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Refused to load the script &#39;http://localhost:35729/livereload.js&#39; because it violates the following Content Security Policy directive: &quot;script-src &#39;self&#39; &#39;unsafe-eval&#39;&quot;.
+&lt;pre&gt;&lt;code&gt;Refused to load the script 'http://localhost:35729/livereload.js' because it violates the following Content Security Policy directive: &quot;script-src 'self' 'unsafe-eval'&quot;.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The problem is you cannot load external JavaScript files without &lt;a href=&quot;https://developer.chrome.com/extensions/contentSecurityPolicy#relaxing-remote-script&quot;&gt;whitelisting secure script locations&lt;/a&gt;. However, there’s a simpler alternative.&lt;/p&gt;
@@ -215,7 +215,7 @@ External IP address:         41.52.154.137
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Use a hidden page on your site that you initially browse to that attaches a&lt;br /&gt;
+    &lt;p&gt;Use a hidden page on your site that you initially browse to that attaches a
 &lt;a href=&quot;https://developers.google.com/analytics/devguides/platform/customdimsmets&quot;&gt;custom dimension&lt;/a&gt; to your Google Analytic’s user.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -262,18 +262,18 @@ External IP address:         41.52.154.137
 
     &amp;lt;script&amp;gt;
       &amp;lt;!-- Standard Google Analytics snippet --&amp;gt;
-      (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]
       ||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
       Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=
-      1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,&#39;script&#39;,
-      &#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
+      1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script',
+      '//www.google-analytics.com/analytics.js','ga');
 
-      ga(&#39;create&#39;, /*YOUR GOOGLE ANALYTICS ID HERE*/, &#39;auto&#39;);
-      ga(&#39;require&#39;, &#39;displayfeatures&#39;);
+      ga('create', /*YOUR GOOGLE ANALYTICS ID HERE*/, 'auto');
+      ga('require', 'displayfeatures');
       &amp;lt;!------------------------------&amp;gt;
 
-      ga(&#39;set&#39;, &#39;dimension/*YOUR DIMENSION INDEX HERE*/&#39;, &#39;true&#39;);
-      ga(&#39;send&#39;, &#39;pageview&#39;);
+      ga('set', 'dimension/*YOUR DIMENSION INDEX HERE*/', 'true');
+      ga('send', 'pageview');
       setTimeout(function() { window.location.href = &quot;/&quot;; }, 5000);
     &amp;lt;/script&amp;gt;
   &amp;lt;/body&amp;gt;
