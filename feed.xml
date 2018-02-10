@@ -5,9 +5,28 @@
     <description></description>
     <link>https://www.seanw.org/</link>
     <atom:link href="https://www.seanw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 01 Feb 2018 22:38:45 +0000</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 22:38:45 +0000</lastBuildDate>
+    <pubDate>Sat, 10 Feb 2018 11:09:48 +0000</pubDate>
+    <lastBuildDate>Sat, 10 Feb 2018 11:09:48 +0000</lastBuildDate>
     <generator>Jekyll v3.7.0</generator>
+    
+      <item>
+        <title>Checkbot for Chrome: Public beta</title>
+        <description>&lt;p&gt;I’m delighted to announce the first public beta release of my new project: &lt;a href=&quot;https://www.checkbot.io&quot;&gt;Checkbot for Chrome&lt;/a&gt;. Checkbot is a Chrome extension that crawls the pages on your site to suggest SEO, web speed and web security improvements. Checkbot aims to be a comprehensive website testing tool that gives you everything you need to identify, understand and fix website issues.&lt;/p&gt;
+
+&lt;p&gt;Checkbot guides you in following web best practices by helping you fix problems such as broken links, duplicate page titles, insecure login forms, redirect chains and much more. The best practices tested for by Checkbot are based on recommendations gathered from Google, W3C, Mozilla and other web experts.&lt;/p&gt;
+
+&lt;p&gt;You can read more about the 50+ tests the Checkbot Chrome extension performs by reading the &lt;a href=&quot;https://www.checkbot.io/guide/&quot;&gt;Checkbot Web Guide&lt;/a&gt;. The guide includes the &lt;a href=&quot;https://www.checkbot.io/guide/seo/&quot;&gt;Checkbot SEO Guide&lt;/a&gt;, &lt;a href=&quot;https://www.checkbot.io/guide/speed/&quot;&gt;Checkbot Web Speed Guide&lt;/a&gt; and &lt;a href=&quot;https://www.checkbot.io/guide/security/&quot;&gt;Checkbot Web Security Guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To find out more about the benefits and features of Checkbot, visit the &lt;a href=&quot;https://www.checkbot.io&quot;&gt;Checkbot homepage&lt;/a&gt;. You can &lt;a href=&quot;https://chrome.google.com/webstore/detail/dagohlmlhagincbfilmkadjgmdnkjinl&quot;&gt;install the Checkbot Chrome extension&lt;/a&gt; via the Chrome Web Store. Checkbot runs on all major desktop operating systems including Windows, Linux, macOS and Chrome OS.&lt;/p&gt;
+
+&lt;p&gt;The purpose of the beta is to get feedback on the current features and to uncover any bugs so please let me know how you get on via &lt;a href=&quot;https://twitter.com/GetCheckbot&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/GetCheckbot/&quot;&gt;Facebook&lt;/a&gt; or &lt;a href=&quot;mailto:contact@checkbot.io?subject=Beta%20feedback&quot;&gt;Email&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+        <link>https://www.seanw.org/blog/checkbot-for-chrome-public-beta/</link>
+        <guid isPermaLink="true">https://www.seanw.org/blog/checkbot-for-chrome-public-beta/</guid>
+        
+        
+      </item>
     
       <item>
         <title>LiveReload for Chrome extensions with Gulp</title>
