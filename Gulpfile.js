@@ -110,7 +110,7 @@ gulp.task("css", function() {
       })
     )
     .pipe(gulpIf(mode.minify, minifyCSS()))
-    .pipe(concat("styles.css"))
+    .pipe(concat("styles2.css"))
     .pipe(gulp.dest("_site/css/"));
 });
 
