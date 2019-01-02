@@ -26,7 +26,7 @@ var runSequence = require("run-sequence");
 var minifyHTML = require("gulp-minify-html");
 var imagemin = require("gulp-imagemin");
 var http = require("http");
-var cloudflare = require("cloudflare").createClient(config.cloudflareAccount);
+var cloudflare = require("cloudflare")(config.cloudflareAccount);
 var less = require("gulp-less");
 
 var modes = {
@@ -67,7 +67,6 @@ gulp.task("upload", function() {
 
 gulp.task("deploy", ["build"], function() {
   if (modeSelect !== "prod") throw "You can only deploy in production mode";
-
   return runSequence(
     ["html", "css"],
     "upload",
@@ -156,7 +155,7 @@ function jekyllBuild(done) {
 
 gulp.task("commit-and-deploy", function(done) {
   return require("child_process", done).exec(
-    'git add . && git commit -m "..." && git push && gulp deploy',
+    "git add . && git commit -m && git push && gulp deploy",
     {
       stdio: "inherit"
     },
@@ -205,4 +204,54 @@ gulp.task("default", ["build", "browser-sync"], function() {
 
   //gulp.watch("./build/**/*", ['bs-reload']);
   //gulp.watch(["./js/*.js", "./**/*.html", "!./build/**/*", "!./_site/**/*"], ['jekyll-build', 'bs-reload']);
+});
+
+var favicons = require("favicons").stream;
+
+gulp.task("favicons", function() {
+  return gulp
+    .src("img/avatar.jpg") // Fails silently if this doesn't exist!
+    .pipe(
+      favicons({
+        appName: "My App",
+        appShortName: "App",
+        appDescription: "This is my application",
+        developerName: "Hayden Bleasel",
+        developerURL: "http://haydenbleasel.com/",
+        background: "#020307",
+        path: "favicons/",
+        url: "http://haydenbleasel.com/",
+        display: "standalone",
+        orientation: "portrait",
+        scope: "/",
+        start_url: "/?homescreen=1",
+        version: 1.0,
+        logging: true,
+        html: "_includes/favicons.html",
+        pipeHTML: true,
+        replace: true,
+        icons: {
+          // Platform Options:
+          // - offset - offset in percentage
+          // - background:
+          //   * false - use default
+          //   * true - force use default, e.g. set background for Android icons
+          //   * color - set background for the specified icons
+          //   * mask - apply mask in order to create circle icon (applied by default for firefox). `boolean`
+          //   * overlayGlow - apply glow effect after mask has been applied (applied by default for firefox). `boolean`
+          //   * overlayShadow - apply drop shadow after mask has been applied .`boolean`
+          //
+          android: false, // Create Android homescreen icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          appleIcon: false, // Create Apple touch icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          appleStartup: false, // Create Apple startup images. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          coast: false, // Create Opera Coast icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          favicons: true, // Create regular favicons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          firefox: false, // Create Firefox OS icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          windows: false, // Create Windows 8 tile icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+          yandex: false // Create Yandex browser icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }`
+        }
+      })
+    )
+    .on("error", x => console.error(x))
+    .pipe(gulp.dest("./"));
 });
