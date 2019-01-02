@@ -153,6 +153,7 @@ hr {
     text-align: center;
   }
 }
+
 @media (max-width: 768px) {
   .navbar-custom {
     background-color: black;
@@ -512,3 +513,22 @@ h2:first-child {
   text-align: center;
 }
 
+.message-bar {
+  top:0;
+  position: sticky;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+
+  text-align: center;
+  z-index: 500;
+  font-size: 0.8em;
+  font-weight: 800;
+
+  a, a:hover, a:focus, a:active {
+    padding: 0.8em;
+        text-decoration: none !important;
+    color: inherit;
+    display: block;
+  }
+}
